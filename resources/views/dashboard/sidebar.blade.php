@@ -32,7 +32,7 @@
               <a href="{{ route('transaction.index') }}">
                 <i class="bi bi-circle"></i><span>Transaksi</span>
               </a>
-              @endif
+            @endif
               <a href="{{ route('my-transaction') }}">
                 <i class="bi bi-circle"></i><span>Transaksi Saya</span>
               </a>
