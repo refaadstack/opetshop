@@ -1,0 +1,20 @@
+body::-webkit-scrollbar {
+  display: none;
+}
+body {
+  overflow-x: hidden;
+}
+.cart-img {
+  background-color: #eee;
+}
+.cart-img img {
+  width: 300px;
+  height: 300px;
+}
+
+@media screen and (max-width: 768px) {
+  .cart-img img {
+    width: 100px;
+    height: 100px;
+  }
+}
