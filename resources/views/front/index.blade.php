@@ -175,7 +175,7 @@
             </ul>
           </div>
           <div class="col-lg-4 col-12">
-            <p class="text-center">Powered By &copy; Refaad</p>
+            <p class="text-center">Powered By &copy; OPETSHOP</p>
           </div>
         </div>
       </div>
