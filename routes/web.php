@@ -9,6 +9,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\CouponController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\UserController;
 use App\Models\Product;
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,10 @@ Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard')
 route::middleware(['auth'])->group(function(){
 
     route::middleware(['admin'])->group(function(){
+        //user
+        route::resource('user',UserController::class);
+        // route::get('/user',UserController::class,'index')->name('user.index');
+
         //product
         route::resource('product', ProductController::class);
         //category

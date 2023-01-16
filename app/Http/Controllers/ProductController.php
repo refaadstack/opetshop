@@ -22,6 +22,7 @@ class ProductController extends Controller
         if(request()->ajax()){
             $query = Product::all();
             return DataTables::of($query)
+            // dd($query);
                     ->addIndexColumn()
                     ->addColumn('action',function($item){
                         return

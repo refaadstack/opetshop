@@ -35,6 +35,10 @@
               <a href="{{ route('my-transaction') }}">
                 <i class="bi bi-circle"></i><span>Semua Transaksi</span>
               </a>
+              <a href="{{ route('user.index') }}">
+                <i class="bi bi-circle"></i><span>Pelanggan</span>
+              </a>
+
             @endif
             @if (Auth::user()->role =='customer')
                 
