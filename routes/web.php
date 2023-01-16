@@ -10,6 +10,7 @@ use App\Http\Controllers\CouponController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProfileController;
 use App\Models\Product;
 /*
 |--------------------------------------------------------------------------
@@ -28,9 +29,7 @@ Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard')
 
 route::middleware(['auth'])->group(function(){
 
-    route::middleware(['admin'])->group(function(){
-        //user
-        route::resource('user',UserController::class);
+    route::middleware(['admin'])->group(function(){        
         // route::get('/user',UserController::class,'index')->name('user.index');
 
         //product
@@ -58,6 +57,11 @@ route::middleware(['auth'])->group(function(){
         route::get('/transaction/{id}/edit',[TransactionController::class,'edit'])->name('transaction.edit');
         route::post('/transaction/{id}/update',[TransactionController::class,'update'])->name('transaction.update');
     });
+
+    route::resource('user',UserController::class);
+    route::get('my-profile/{id}',[ProfileController::class, 'myprofile'])->name('my-profile');
+    route::post('my-profile/update/{id}',[ProfileController::class, 'update'])->name('my-profile.update');
+
     //transaction
     route::post('/checkout',[TransactionController::class, 'checkout'])->name('checkout');
     route::get('/checkout/success',[TransactionController::class, 'success']);

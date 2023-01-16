@@ -19,7 +19,7 @@ class UserController extends Controller
     {
         // dd('pepek');
         if(request()->ajax()){
-            $query = User::get();
+            $query = User::where('role','!=','pemilik');
             return DataTables::of($query)
                 ->addIndexColumn()
                 ->addColumn('action', function($item){
@@ -69,10 +69,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        if(Auth::user()->role=='admin'){
             $user=User::find($id);
-        }
-            $user = User::find(Auth::user()->id);
 
             return view('admin.user.show', compact(['user']));
     }

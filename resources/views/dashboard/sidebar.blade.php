@@ -46,6 +46,11 @@
                 <i class="bi bi-circle"></i><span>Transaksi Saya</span>
               </a>
             @endif
+            @if (Auth::user()->role =='pemilik')
+            <a href="{{ route('user.index') }}">
+              <i class="bi bi-circle"></i><span>Kelola Admin</span>
+            </a>
+            @endif
             </li>
           </ul>
         </li><!-- End Components Nav -->
