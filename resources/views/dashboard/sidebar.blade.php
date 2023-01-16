@@ -30,12 +30,18 @@
                 <i class="bi bi-circle"></i><span>Banner</span>
               </a>
               <a href="{{ route('transaction.index') }}">
-                <i class="bi bi-circle"></i><span>Transaksi</span>
+                <i class="bi bi-circle"></i><span>Kelola Transaksi</span>
+              </a>
+              <a href="{{ route('my-transaction') }}">
+                <i class="bi bi-circle"></i><span>Semua Transaksi</span>
               </a>
             @endif
+            @if (Auth::user()->role =='customer')
+                
               <a href="{{ route('my-transaction') }}">
                 <i class="bi bi-circle"></i><span>Transaksi Saya</span>
               </a>
+            @endif
             </li>
           </ul>
         </li><!-- End Components Nav -->

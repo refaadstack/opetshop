@@ -151,7 +151,10 @@ class TransactionController extends Controller
     }
     public function indexMy(){
         if(request()->ajax()){
-                $query = Transaction::where('user_id',Auth::user()->id);
+                if(Auth::user()->role == 'customer'){
+                    $query = Transaction::where('user_id',Auth::user()->id);
+                }
+                    $query = Transaction::orderBy('created_at','desc')->get();
                 return DataTables::of($query)
                     ->addIndexColumn()
                     ->addColumn('action',function($item){
