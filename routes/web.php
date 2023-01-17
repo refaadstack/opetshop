@@ -11,6 +11,7 @@ use App\Http\Controllers\BannerController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\LaporanController;
 use App\Models\Product;
 /*
 |--------------------------------------------------------------------------
@@ -68,7 +69,9 @@ route::middleware(['auth'])->group(function(){
     route::get('/my-transaction',[TransactionController::class,'indexMy'])->name('my-transaction');
     route::get('/transaction/{id}/show',[TransactionController::class,'show'])->name('transaction.show');
 
-   
+   //laporan
+   route::get('/laporan',[LaporanController::class,'index'])->name('laporan.index');
+   route::post('laporan/transaksi',[LaporanController::class,'transaksi'])->name('laporan.transaksi');
     
     
     //cart

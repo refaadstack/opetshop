@@ -50,6 +50,9 @@
             <a href="{{ route('user.index') }}">
               <i class="bi bi-circle"></i><span>Kelola Admin</span>
             </a>
+            <a href="{{ route('laporan.index') }}">
+              <i class="bi bi-circle"></i><span>Laporan Transaksi</span>
+            </a>
             @endif
             </li>
           </ul>
