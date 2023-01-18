@@ -17,7 +17,6 @@ class UserController extends Controller
      */
     public function index()
     {
-        // dd('pepek');
         if(request()->ajax()){
             $query = User::where('role','!=','pemilik');
             return DataTables::of($query)
